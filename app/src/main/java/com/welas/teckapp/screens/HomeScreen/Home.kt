@@ -30,7 +30,7 @@ fun HomeScreen() {
                 onClick = {},
                 fontColor = fontBlack,
                 contentColor = principalButton,
-                title = "Nueva Venta",
+                title = "Nueva Venta.",
                 width = .9f,
             )
 

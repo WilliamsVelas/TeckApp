@@ -61,7 +61,7 @@ fun DrawerContent(navController: NavController, onCloseDrawer: () -> Unit) {
             Card(
                 modifier = Modifier
                     .fillMaxWidth(.8f)
-                    .padding(vertical = 8.dp)
+                    .padding(vertical = 12.dp)
                     .clickable {
                         navController.navigate(route)
                         onCloseDrawer()
