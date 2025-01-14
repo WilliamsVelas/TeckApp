@@ -31,23 +31,6 @@ fun HomeScreen() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            //First row with welcome message, menu button and user icon
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                MenuCard()
-                Text(
-                    modifier = Modifier.weight(1f),
-                    text = "Bienvenido, usuario", style = TextStyle(
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 18.sp,
-                        color = fontWhite
-                    )
-                )
-                UserCard()
-            }
 
             //Button to set a new sell
             ModificableButton(

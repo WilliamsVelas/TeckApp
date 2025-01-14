@@ -21,6 +21,7 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
+import androidx.compose.material3.DrawerState
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.RadioButton
@@ -42,41 +43,14 @@ import com.welas.teckapp.ui.theme.principalButton
 import com.welas.teckapp.ui.theme.principalWhite
 
 @Composable
-fun MenuCard(
-) {
-    var isDialogOpen by remember { mutableStateOf(false) }
-
-    if (!isDialogOpen) {
-        IconButton(onClick = { isDialogOpen = !isDialogOpen }) {
-            Icon(
-                imageVector = Icons.Default.Menu,
-                contentDescription = "menuButton",
-                tint = principalWhite,
-                modifier = Modifier.size(45.dp)
-            )
-        }
-    }
-
-    if (isDialogOpen) {
-        Row(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(principalButton),
-            horizontalArrangement = Arrangement.Start
-        ) {
-            Dialog(onDismissRequest = { isDialogOpen = false }) {
-                Card(
-                    modifier = Modifier
-                        .fillMaxSize(),
-                    colors = CardDefaults.cardColors(
-                        containerColor = Color.White,
-                        contentColor = Color.Black
-                    ),
-                    shape = RoundedCornerShape(22.dp),
-                ) {
-
-                }
-            }
-        }
+fun MenuCard(drawerState: DrawerState, onOpenDrawer: () -> Unit) {
+    IconButton(onClick = onOpenDrawer) {
+        Icon(
+            imageVector = Icons.Default.Menu,
+            contentDescription = "Menu Button",
+            tint = Color.White,
+            modifier = Modifier.size(45.dp)
+        )
     }
 }
+
